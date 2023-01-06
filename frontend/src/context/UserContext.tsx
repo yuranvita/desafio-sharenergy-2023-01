@@ -30,6 +30,7 @@ const UserProvider = ({ children }: IUserProviderProps) => {
     password: string,
     remember: boolean
   ) => {
+    setLoading(true);
     try {
       const { data } = await api.post("/session", {
         username,
@@ -54,11 +55,12 @@ const UserProvider = ({ children }: IUserProviderProps) => {
         position: toast.POSITION.BOTTOM_RIGHT,
         autoClose: 1500,
       });
-
+      setLoading(false);
       navigate("/api-user");
     } catch (error: any) {
       console.log(error as any);
       toast.error(error.response.data.message);
+      setLoading(false);
     }
   };
 

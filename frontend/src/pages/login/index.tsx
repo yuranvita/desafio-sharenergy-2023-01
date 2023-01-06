@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { UserContext } from "../../context/UserContext";
 
 function LoginPage() {
@@ -12,7 +13,7 @@ function LoginPage() {
     rememberItem === "true" ? true : false
   );
 
-  const { handleLogin } = useContext(UserContext);
+  const { handleLogin, loading } = useContext(UserContext);
 
   return (
     <div className="flex justify-center items-center w-full min-h-screen bg-solar-energy bg-cover p-10">
@@ -62,16 +63,25 @@ function LoginPage() {
             </div>
 
             <div className="mt-5 w-full">
-              <button
-                type="submit"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleLogin(username, password, remember);
-                }}
-                className="bg-green-600 p-1 text-lg rounded-md w-full"
-              >
-                Logar
-              </button>
+              {loading ? (
+                <div className=" flex bg-green-600 p-1 text-lg rounded-md w-full items-center justify-center">
+                  <AiOutlineLoading3Quarters
+                    size={20}
+                    className="animate-spin"
+                  />
+                </div>
+              ) : (
+                <button
+                  type="submit"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLogin(username, password, remember);
+                  }}
+                  className="bg-green-600 p-1 text-lg rounded-md w-full"
+                >
+                  Logar
+                </button>
+              )}
             </div>
           </form>
         </div>
