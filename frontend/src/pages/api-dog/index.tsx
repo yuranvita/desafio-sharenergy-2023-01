@@ -7,7 +7,7 @@ import Header from "../../components/header";
 function ApiDog() {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   function handleRefresh() {
-    iframeRef.current!.src = "http://random.dog";
+    iframeRef.current!.src = "https://random.dog";
   }
 
   return (
