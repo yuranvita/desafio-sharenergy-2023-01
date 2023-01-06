@@ -1,12 +1,12 @@
 # Bem vindo ao backend do desafio sharyenergy
 
-# Observação:
+## SITE DO DESAFIO [AQUI](https://frontend-ivory-seven.vercel.app/api-user)
 
-O arquivo [.env]() ficara exposto só para critério de análise do código, já que esse banco será destruido em breve.
+## VIDEO DO DESAFIO [AQUI](https://youtu.be/cxRFKu6E7Yk)
 
 #
 
-## aqui vão algumas instruções para conseguir exexutar ná sua máquina
+## aqui vão algumas instruções para conseguir exexutar na sua máquina
 
 ### primeiramente vamos iniciar com o comando
 
