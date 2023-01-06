@@ -8,6 +8,7 @@ import route from "./routes";
 import { UserService } from "./services/user.service";
 
 const app = express();
+const port = process.env.PORT || 80;
 
 const userService = new UserService();
 const root = {
@@ -19,7 +20,7 @@ app.use(express.json());
 app.use(route);
 app.use(ensureAppError);
 
-app.listen(3333, () => {
+app.listen(port, () => {
   userService.create(root);
-  console.log("listening on port 3333");
+  console.log("listening on port " + port);
 });
