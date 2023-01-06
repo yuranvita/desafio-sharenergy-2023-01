@@ -28,7 +28,7 @@ function ApiDog() {
           ref={iframeRef}
           height="100%"
           width={"100%"}
-          src="http://random.dog"
+          src="https://random.dog"
         ></iframe>
       </div>
 
